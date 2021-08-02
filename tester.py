@@ -6,10 +6,10 @@ dictionary = {}
 while 1 == 1:
     now = datetime.now()
     current_time = now.strftime("%I:%M:%S:%p")
-    task = input("name: ")
+    task = input("task: ")
     dictionary[task] = current_time
 
-    if task == "task":
+    if task == "exit":
         break
 
 
