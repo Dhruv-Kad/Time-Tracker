@@ -1,3 +1,4 @@
+import json
 import time
 from collections import defaultdict
 from datetime import datetime
@@ -32,6 +33,9 @@ while 1 == 1:
 
 for key, value in dictionary.items():
     print(key, ':', value)
+
+with open('myfile.json, "w"') as fp:
+    json.dump(dictionary, fp)
 
         
     
