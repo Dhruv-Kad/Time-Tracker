@@ -1,28 +1,39 @@
+import time
+from collections import defaultdict
 from datetime import datetime
-import json
+result = defaultdict(int)
+x = datetime.now().strftime("%a:%d:%b:%Y")
+ 
+dictionary = {} 
 
 
-dictionary = {}
-now = datetime.now()
-x = "resume"
+def task(taskname):
+    start_time = time.time() 
+    input("Type anything to stop counting time: ")
+    end_time = time.time()
+    time_passed = end_time - start_time
+    if taskname in dictionary:
+      oldtime = (dictionary.get(taskname))
+      print(time_passed)
+      time_passed += oldtime
+    else:
+        dictionary[x] = time_passed
+        print(time_passed)
 
-dictionary["Entry date"] = now.strftime("%a:%d:%b:%Y")
+    dictionary[x] = time_passed
 
-while x  == "resume":
-    now = datetime.now()
-    current_time = now.strftime("%I:%M:%S:%p")
-    task = input("task: ")
-    dictionary[task] = current_time
-    if task == "exit":
+
+while 1 == 1:
+    x = input("enter taskname here:")
+    if x == "stop":
         break
-    if task == "pause":
-        x = 0
-        x = input("To resume type resume, to exit type exit:")
+    else:
+        task(x)
 
-with open('myfile.json', 'w') as fp:
-    json.dump(dictionary, fp)
 for key, value in dictionary.items():
-    print(key, ' : ', value)
+    print(key, ':', value)
 
-
+        
+    
+    
 
