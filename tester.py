@@ -1,12 +1,14 @@
 import json
 import time
 from datetime import datetime
-x = datetime.now().strftime("%a:%d:%b:%Y")
+x = 1
+b = datetime.now().strftime("%a:%d:%b:%Y")
  #adds current day to the dictionary
-dictionary = {x : "current_day",}
+dictionary = {}
 
 
 def task(taskname):
+    dictionary[b] = ("Todays date")
     start_time = time.time()
     #there was an if statment here, but I realized that you only don't really need to get this output
     input("Type anything to stop counting time: ")
@@ -32,7 +34,7 @@ def task(taskname):
 #inf loop
 while True:
     x = input("enter taskname here:")
-    if x == "stop" or "exit":
+    if x == "stop":
         break
     else:
         task(x)
